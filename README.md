@@ -5,7 +5,18 @@
 
 Know the directions and distances of any places on earth you choose. For iOS and Android.
 
-## Getting Started
+## User Stories
+
+As a user, I want to...
+
+- Use the app on iOS or Android
+- Use the app as a regular compass
+- Add points of my choosing to the compass from built-in and custom lists
+- Remove points from my custom list
+- See the nicknames, locations, and distances (in imperial and metric) of points
+- Open the app in the same state as when I closed it
+
+<!-- ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
@@ -57,12 +68,13 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Add additional notes about how to deploy this on a live system -->
 
 ## Built With
 
-* [Expo](https://expo.dev/) - platform for making universal native apps with React
-* [React Native](https://reactnative.dev/) - UI framework
+- [Expo](https://expo.dev/) - platform for making universal native apps with React
+- [React Native](https://reactnative.dev/) - UI framework
+- [TypeScript](https://www.typescriptlang.org/) - strongly typed language that builds on JavaScript
 
 ## Contributing
 
@@ -75,7 +87,7 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **[Ron Sala](https://github.com/ronsala)** - *Creator*
+- **[Ron Sala](https://github.com/ronsala)** - *Creator*
 
 <!-- See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
 
@@ -85,4 +97,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* PurpleBooth for the [README-Template.md gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+- PurpleBooth for the [README-Template.md gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).

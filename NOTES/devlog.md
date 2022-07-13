@@ -132,3 +132,7 @@ Think My Points Compass will work. Can always change later.
 Set up the repo <https://github.com/ronsala/my-points-compass> and moved the above devlog portions into it.
 
 Started a `user-stories.md` checklist.
+
+## 0713
+
+Yesterday, worked on README. Continuing today.
