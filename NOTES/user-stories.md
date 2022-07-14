@@ -3,7 +3,7 @@
 ## As a user, I want to
 
 - [ ] Use the app on iOS or Android
-  - [ ] Set up expo
+  - [x] ~~_Set up expo_~~ [2022-07-14]
   - [ ] Set up ways to use app in iOS and Android
 - [ ] Use the app as a regular compass
   - [ ] Get directional data from iPhone
