@@ -4,9 +4,50 @@ import { Platform, Text, View, StyleSheet } from "react-native";
 import * as Location from "expo-location";
 
 export default function App() {
-	const [location, setLocation] = useState({});
-	const [heading, setHeading] = useState({});
+	interface LocationOptionsObject {
+		enableHighAccuracy: boolean;
+		timeInterval: number;
+		distanceInterval: number;
+	}
+
+	interface HeadingObject {
+		accuracy: number;
+		magHeading: number;
+		trueHeading: number;
+	}
+
+	const [positionOptions, setPositionOptions] = useState<LocationOptionsObject>(
+		{
+			enableHighAccuracy: true,
+			timeInterval: 10000,
+			distanceInterval: 100,
+		}
+	);
+
+	const [location, setLocation] = useState<Location.LocationObject>({
+		coords: {
+			latitude: 0,
+			longitude: 0,
+			altitude: 0,
+			accuracy: 0,
+			altitudeAccuracy: 0,
+			heading: 0,
+			speed: 0,
+		},
+		timestamp: 0,
+	});
+
+	const [heading, setHeading] = useState<HeadingObject>({
+		accuracy: 3,
+		magHeading: 0,
+		trueHeading: 0,
+	});
+
 	const [errorMsg, setErrorMsg] = useState("");
+
+	const updateHeading = (headingObject: HeadingObject) => {
+		setHeading(headingObject);
+	};
 
 	useEffect(() => {
 		(async () => {
@@ -16,11 +57,13 @@ export default function App() {
 				return;
 			}
 
-			let location = await Location.getCurrentPositionAsync({});
-			setLocation(location);
-
-			let heading = await Location.getHeadingAsync();
-			setHeading(heading);
+			Location.watchPositionAsync(
+				positionOptions,
+				(location: Location.LocationObject) => {
+					setLocation(location);
+				}
+			);
+			Location.watchHeadingAsync(updateHeading);
 		})();
 	}, []);
 
@@ -28,13 +71,15 @@ export default function App() {
 	if (errorMsg) {
 		locationText = errorMsg;
 	} else if (location) {
-		locationText = JSON.stringify(location);
+		locationText = `Lat: ${location.coords.latitude.toFixed(
+			3
+		)}, Long: ${location.coords.longitude.toFixed(3)}`;
 	}
 	let headingText = "Waiting..";
 	if (errorMsg) {
 		headingText = errorMsg;
 	} else if (heading) {
-		headingText = JSON.stringify(heading);
+		headingText = heading.magHeading.toFixed();
 	}
 
 	return (
@@ -42,7 +87,7 @@ export default function App() {
 			<Text>My Points Compass</Text>
 			<Text></Text>
 			<Text>Location: {locationText}</Text>
-			<Text>Heading: {headingText}</Text>
+			<Text>Magnetic Heading: {headingText}</Text>
 		</View>
 	);
 }
