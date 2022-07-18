@@ -82,12 +82,16 @@ export default function App() {
 		headingText = heading.magHeading.toFixed();
 	}
 
+	setStatusBarStyle("dark");
+
 	return (
 		<View style={styles.container}>
 			<Text>My Points Compass</Text>
 			<Text></Text>
 			<Text>Location: {locationText}</Text>
 			<Text>Magnetic Heading: {headingText}</Text>
+
+			<StatusBar hidden={false} />
 		</View>
 	);
 }
