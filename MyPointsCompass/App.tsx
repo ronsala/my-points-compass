@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
-import { Platform, Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import * as Location from "expo-location";
 
 export default function App() {
@@ -81,8 +81,6 @@ export default function App() {
 	} else if (heading) {
 		headingText = heading.magHeading.toFixed();
 	}
-
-	setStatusBarStyle("dark");
 
 	return (
 		<View style={styles.container}>
