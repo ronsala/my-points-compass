@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
-import { Platform, Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import * as Location from "expo-location";
 
 export default function App() {
@@ -88,6 +88,8 @@ export default function App() {
 			<Text></Text>
 			<Text>Location: {locationText}</Text>
 			<Text>Magnetic Heading: {headingText}</Text>
+
+			<StatusBar hidden={false} />
 		</View>
 	);
 }
