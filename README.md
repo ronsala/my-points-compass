@@ -1,5 +1,4 @@
-
-# My Points Compass
+# My Points Compass (work in progress)
 
 <!-- TODO -->
 
@@ -85,11 +84,12 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning.
+
 <!-- For the versions available, see the [tags on this repository](https://github.com/your/project/tags). -->
 
 ## Maintainer
 
-- **[Ron Sala](https://github.com/ronsala)** - *Creator*
+- **[Ron Sala](https://github.com/ronsala)** - _Creator_
 
 <!-- See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
 
