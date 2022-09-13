@@ -1,9 +1,8 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useState, useEffect } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { useState, useEffect } from "react";
 import * as Location from "expo-location";
+import Compass from "../components/Compass";
 
-export default function App() {
+export default function CompassContainer() {
 	interface LocationOptionsObject {
 		enableHighAccuracy: boolean;
 		timeInterval: number;
@@ -71,9 +70,8 @@ export default function App() {
 	if (errorMsg) {
 		locationText = errorMsg;
 	} else if (location) {
-		locationText = `Lat: ${location.coords.latitude.toFixed(
-			3
-		)}, Long: ${location.coords.longitude.toFixed(3)}`;
+		locationText = `Lat: ${location.coords.latitude.toFixed(3)}, 
+    Long: ${location.coords.longitude.toFixed(3)}`;
 	}
 	let headingText = "Waiting..";
 	if (errorMsg) {
@@ -82,23 +80,10 @@ export default function App() {
 		headingText = heading.magHeading.toFixed();
 	}
 
-	return (
-		<View style={styles.container}>
-			<Text>My Points Compass</Text>
-			<Text></Text>
-			<Text>Location: {locationText}</Text>
-			<Text>Magnetic Heading: {headingText}</Text>
+	const props = {
+		loc: locationText,
+		head: headingText,
+	};
 
-			<StatusBar hidden={false} />
-		</View>
-	);
+	return <Compass {...props} />;
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
-	},
-});
