@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+// import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import CompassContainer from "./containers/CompassContainer";
@@ -10,7 +10,7 @@ export default function App() {
 			<Text></Text>
 			<CompassContainer />
 
-			<StatusBar hidden={false} />
+			{/* <StatusBar hidden={false} /> */}
 		</View>
 	);
 }
